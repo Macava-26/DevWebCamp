@@ -1,0 +1,36 @@
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
+# Dependencias
+vendor/
+node_modules/
+
+# Frontend compilado (generado desde src)
+public/build/
+dist/
+
+# Logs y temporales
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.cache/
+tmp/
+temp/
+
+# Cache de testing/cobertura
+.phpunit.result.cache
+coverage/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# IDE/Editor
+.idea/
+.vscode/
+*.swp
+*.swo
