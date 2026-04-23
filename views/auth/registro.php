@@ -2,29 +2,32 @@
     <h2 class="auth__heading"><?php echo $titulo; ?></h2>
     <p class="auth__texto">Registrate en DevWebCamp</p>
 
+    <?php
+    require_once __DIR__ . '/../templates/alertas.php';
+    ?>
 
-    <div class="formulario__campo">
-        <label for="nombre" class="formulario__label">Nombre:</label>
-        <input
-            type="text"
-            class="formulario__input"
-            placeholder="Tu Nombre"
-            id="nombre"
-            name="nombre">
-    </div>
-    <div class="formulario__campo">
-        <label for="apellido" class="formulario__label">Apellido:</label>
-        <input
-            type="text"
-            class="formulario__input"
-            placeholder="Tu Apellido"
-            id="apellido"
-            name="apellido">
-    </div>
+    <form method="POST" action="/registro" class="formulario">
+        <div class="formulario__campo">
+            <label for="nombre" class="formulario__label">Nombre:</label>
+            <input
+                type="text"
+                class="formulario__input"
+                placeholder="Tu Nombre"
+                id="nombre"
+                name="nombre"
+                value="<?php echo $usuario->nombre; ?>">
+        </div>
+        <div class="formulario__campo">
+            <label for="apellido" class="formulario__label">Apellido:</label>
+            <input
+                type="text"
+                class="formulario__input"
+                placeholder="Tu Apellido"
+                id="apellido"
+                name="apellido"
+                value="<?php echo $usuario->apellido; ?>">
+        </div>
 
-
-
-    <form class="formulario">
         <div class="formulario__campo">
             <label for="email" class="formulario__label">E-mail:</label>
             <input
@@ -32,7 +35,8 @@
                 class="formulario__input"
                 placeholder="Tu E-mail"
                 id="email"
-                name="email">
+                name="email"
+                value="<?php echo $usuario->email; ?>">
         </div>
 
         <div class="formulario__campo">

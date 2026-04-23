@@ -10,6 +10,11 @@ class Email
     protected $nombre;
     protected $token;
 
+    private function obtenerHost(): string
+    {
+        return rtrim($_ENV['HOST'] ?? 'http://localhost:3000', '/');
+    }
+
     public function __construct($email, $nombre, $token)
     {
         $this->email = $email;
@@ -53,11 +58,12 @@ class Email
     {
         $mail = $this->configurarMailer();
         $mail->Subject = 'Confirma tu Cuenta';
+        $host = $this->obtenerHost();
 
 
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola " . $this->nombre . "</strong> Has creado tu cuenta, da click en el siguiente enlace: </p>";
-        $contenido .= "<p>Presiona aqui: <a href='http://localhost:3000/confirmar?token=" . $this->token . "'>Confirmar Cuenta </a></p>";
+        $contenido .= "<p>Presiona aqui: <a href='" . $host . "/confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta </a></p>";
         $contenido .= "</html>";
         $mail->Body = $contenido;
 
@@ -70,11 +76,12 @@ class Email
         
         $mail = $this->configurarMailer();
         $mail->Subject = 'Reestablece tu Password';
+        $host = $this->obtenerHost();
 
 
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola " . $this->nombre . "</strong> Da click en el siguiente enlace para Reestablecer tu Password: </p>";
-        $contenido .= "<p>Presiona aqui: <a href='http://localhost:3000/restablecer?token=" . $this->token . "'>Reestablecer Password </a></p>";
+        $contenido .= "<p>Presiona aqui: <a href='" . $host . "/reestablecer?token=" . $this->token . "'>Reestablecer Password </a></p>";
         $contenido .= "<p>Si no haz sido tu, favor de Ignorar este Mensaje</p>";
         $contenido .= "</html>";
         $mail->Body = $contenido;

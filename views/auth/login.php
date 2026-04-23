@@ -2,8 +2,12 @@
     <h2 class="auth__heading"><?php echo $titulo; ?></h2>
     <p class="auth__texto">Iniciar Sesión en DevWebCamp</p>
 
+    <?php
+    require_once __DIR__ . '/../templates/alertas.php';
+    ?>
 
-    <form class="formulario">
+
+    <form method="POST" action="/login" class="formulario">
         <div class="formulario__campo">
             <label for="email" class="formulario__label">E-mail:</label>
             <input
@@ -29,7 +33,6 @@
     <div class="acciones">
         <a href="/registro" class="acciones__enlace">¿Aún no tienes una cuenta? Registraté Aquí!</a>
         <a href="/olvide" class="acciones__enlace">¿Olvidaste tu contraseña?</a>
-
     </div>
 
 </main>

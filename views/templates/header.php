@@ -10,7 +10,7 @@
                 <h1 class="header__logo">&#60;DevWebCamp /> </h1>
             </a>
 
-            <p class="header__texto">Octubre 5-6 - 2026</p>
+            <p class="header__texto">Octubre 5 Y 6 - 2026</p>
             <p class="header__texto header__texto--modalidad">Presencial - En línea</p>
 
             <a href="/registro" class="header__boton">Comprar Pase de Acceso</a>
